@@ -1,7 +1,10 @@
 public class Tiskikoneharkka {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Tiskikone tiski1 = new Tiskikone();
+		tiski1.valitseOhjelma(3);
+		tiski1.turnOnOff();
+		System.out.println(tiski1.getPaalla());
 
 	}
 
@@ -9,18 +12,20 @@ public class Tiskikoneharkka {
 
 class Tiskikone {
 	//attribuutit
-	private int ohjelma = 0; ///1, 2 tai 3
+	private int ohjelma = 1; ///1, 2 tai 3
 	private boolean paalla = false; //on tai off
 	
 	//rakentajat
 	public Tiskikone() {
-		ohjelma = 0;
+		ohjelma = 1;
 		paalla = false;
+		this.tulostaTiedot();
 	}
 	
 	public Tiskikone(int ohjelma, boolean paalla) {
 		this.ohjelma = ohjelma;
 		this.paalla = paalla;
+		this.tulostaTiedot();
 	}
 	
 	//setterit ja getterit
@@ -65,7 +70,7 @@ class Tiskikone {
 	}
 	
 	//tulostaa tiedot
-	public void tulostaTiedot() {
+	private void tulostaTiedot() {
 		System.out.print("Onko tiskikone päällä: ");
 		if (this.getPaalla()) {
 			System.out.println("on");
